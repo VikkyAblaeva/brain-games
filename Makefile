@@ -9,3 +9,6 @@ brain-games:
 
 lint:
 	npx eslint .
+
+brain-even:
+	node bin/brain-even.js 17.9.0
