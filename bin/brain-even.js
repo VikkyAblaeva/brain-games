@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
+
 import { greeting, userName } from '../src/cli.js';
 
 const even = () => {
@@ -8,7 +9,7 @@ const even = () => {
   let userQuestion = 0;
   let yesOrNo = '';
   let exit = '';
-  for (let i = 1; i < 4; i = i + 1) {
+  for (let i = 1; i < 4; i += 1) {
     userQuestion = Math.floor(Math.random() * 100);
     console.log(`Question: ${userQuestion}`);
     result = readlineSync.question('You answer: ');
@@ -18,8 +19,8 @@ const even = () => {
       yesOrNo = 'no';
     }
     if (
-      (result === 'yes' && userQuestion % 2 === 0) ||
-      (result === 'no' && userQuestion % 2 !== 0)
+      (result === 'yes' && userQuestion % 2 === 0)
+      || (result === 'no' && userQuestion % 2 !== 0)
     ) {
       console.log('Correct!');
     } else {
