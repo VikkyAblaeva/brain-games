@@ -6,3 +6,6 @@ publish:
 
 brain-games:
 	node bin/brain-games.js 17.9.0
+
+lint:
+	npx eslint .
