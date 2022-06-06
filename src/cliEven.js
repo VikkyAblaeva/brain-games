@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-import { userName } from '../src/cli.js';
+import { userName } from './cli.js';
 
 const even = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -18,8 +18,8 @@ const even = () => {
       yesOrNo = 'no';
     }
     if (
-      (result === 'yes' && userQuestion % 2 === 0) ||
-      (result === 'no' && userQuestion % 2 !== 0)
+      (result === 'yes' && userQuestion % 2 === 0)
+      || (result === 'no' && userQuestion % 2 !== 0)
     ) {
       console.log('Correct!');
     } else {
@@ -30,4 +30,4 @@ const even = () => {
   return `Congratulations, ${userName}!`;
 };
 
-export { even };
+export default even;
