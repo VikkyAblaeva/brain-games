@@ -4,7 +4,7 @@ import random from '../src/random.js';
 const gameGcd = () => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello,  ${userName}!`);
+  console.log(`Hello, ${userName}!`);
   console.log('Find the greatest common divisor of given numbers.');
   let min = 0;
   let maxGcd = 0;
