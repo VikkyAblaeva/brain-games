@@ -4,6 +4,8 @@
 
 <a href="https://codeclimate.com/github/VikkyAblaeva/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/eadc0edf69c877e318cc/maintainability" /></a>
 
+ccf466ca8f8a3cd55a972f47e1f9068aefc5dda00b0e58f12e9a681944f8e50b
+
 <h3>brain-games</h3>
 
 <a href="https://asciinema.org/a/CvQcQV2TvQmFz6Ua6z5n4t1fk" target="_blank"><img src="https://asciinema.org/a/CvQcQV2TvQmFz6Ua6z5n4t1fk.svg"></a>
