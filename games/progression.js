@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import random from '../src/random.js';
-import arrayProgression from '../src/index.js';
+import { arrayProgression } from '../src/index.js';
 
 const gameProgression = () => {
   console.log('Welcome to the Brain Games!');

@@ -12,4 +12,20 @@ const arrayProgression = () => {
   return array;
 };
 
-export default arrayProgression;
+const prime = (number) => {
+  let divisiors = 0;
+  let finish;
+  for (let i = 2; i <= number / 2; i += 1) {
+    if (number % i === 0) {
+      divisiors += 1;
+    }
+  }
+  if (divisiors === 0) {
+    finish = 'yes';
+  } else {
+    finish = 'no';
+  }
+  return finish;
+};
+
+export { arrayProgression, prime };
