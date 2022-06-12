@@ -28,4 +28,23 @@ const prime = (number) => {
   return finish;
 };
 
-export { arrayProgression, prime };
+const welcome = () => {
+  console.log('Welcome to the Brain Games!');
+};
+
+const hello = (nameOfUser) => {
+  console.log(`Hello,  ${nameOfUser}!`);
+};
+
+const win = (nameOfUser) => {
+  console.log(`Congratulations, ${nameOfUser}!`);
+};
+
+const noWin = (userAnswer, correctAnswer, nameOfUser) => {
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+  console.log(`Let's try again, ${nameOfUser}!`);
+};
+
+export {
+  arrayProgression, prime, welcome, hello, win, noWin,
+};

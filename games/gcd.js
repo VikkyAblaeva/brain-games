@@ -1,24 +1,22 @@
 import readlineSync from 'readline-sync';
 import random from '../src/random.js';
+import {
+  welcome, hello, win, noWin,
+} from '../src/index.js';
 
 const gameGcd = () => {
-  console.log('Welcome to the Brain Games!');
+  welcome();
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
+  hello(userName);
   console.log('Find the greatest common divisor of given numbers.');
   let min = 0;
   let maxGcd = 0;
   let array = [];
   let userAnswer = 0;
-  let finish = '';
   for (let j = 0; j < 3; j += 1) {
     array = [];
     array = [random(20) + 1, random(15) + 1];
-    if (array[0] < array[1]) {
-      min = array[0];
-    } else {
-      min = array[1];
-    }
+    min = Math.min.apply(null, array);
     console.log(`Question: ${array[0]} ${array[1]}`);
     userAnswer = readlineSync.question('Your answer: ');
     for (let i = 1; i <= min; i += 1) {
@@ -29,14 +27,10 @@ const gameGcd = () => {
     if (Number(userAnswer) === maxGcd) {
       console.log('Correct!');
     } else {
-      finish = `'${userAnswer}' is wrong answer ;(. Correct answer was '${maxGcd}'.\nLet's try again, ${userName}!`;
-      console.log(finish);
-      return finish;
+      return noWin(userAnswer, maxGcd, userName);
     }
   }
-  finish = `Congratulations, ${userName}!`;
-  console.log(finish);
-  return finish;
+  return win(userName);
 };
 
 export default gameGcd;

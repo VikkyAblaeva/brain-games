@@ -1,13 +1,15 @@
 import readlineSync from 'readline-sync';
 import random from '../src/random.js';
+import {
+  hello, welcome, win, noWin,
+} from '../src/index.js';
 
 const gameCalc = () => {
-  console.log('Welcome to the Brain Games!');
+  welcome();
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello,  ${userName}!`);
+  hello(userName);
   let result = [];
   let userQuestion = [];
-  let finish = '';
   const operands = '+-*';
   let a = 0;
   console.log('What is the result of the expression?');
@@ -30,14 +32,10 @@ const gameCalc = () => {
     if (result[1] === result[0]) {
       console.log('Correct!');
     } else {
-      finish = `'${result[1]}' is wrong answer ;(. Correct answer was '${result[0]}'\nLet's try again, ${userName}`;
-      console.log(finish);
-      return finish;
+      return noWin(result[1], result[0], userName);
     }
   }
-  finish = `Congratulations, ${userName}!`;
-  console.log(finish);
-  return finish;
+  return win(userName);
 };
 
 export default gameCalc;
