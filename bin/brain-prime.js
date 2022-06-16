@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import primeOrNot from '../games/prime.js';
+import primeOrNot from '../src/games/prime.js';
 
 primeOrNot();
