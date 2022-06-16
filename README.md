@@ -47,4 +47,4 @@
 
 <h3>Установка пакета:</h3>
 
-<a href="https://asciinema.org/a/2iCLcNf2ySyrCWtpnzsZFtpZg" target="_blank"><img src="https://asciinema.org/a/2iCLcNf2ySyrCWtpnzsZFtpZg"></a>
+<a href="https://asciinema.org/a/2iCLcNf2ySyrCWtpnzsZFtpZg" target="_blank"><img src="https://asciinema.org/a/2iCLcNf2ySyrCWtpnzsZFtpZg.svg"></a>
