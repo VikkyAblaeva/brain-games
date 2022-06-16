@@ -16,6 +16,7 @@ const generateProgression = () => {
 };
 
 const isPrime = (number) => {
+  number += 2;
   let divisiors = 0;
   let finishOfFunction;
   for (let i = 2; i <= number / 2; i += 1) {

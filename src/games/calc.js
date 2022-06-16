@@ -35,20 +35,12 @@ const gameCalc = () => {
       resultOfOperation = Number(userQuestion[0]) * Number(userQuestion[2]);
     }
     userAnswerAndCorrectAnswer.push(resultOfOperation);
-    console.log(
-      `Question: ${userQuestion[0]} ${userQuestion[1]} ${userQuestion[2]}`
-    );
-    userAnswerAndCorrectAnswer.push(
-      Number(readlineSync.question('You answer: '))
-    );
+    console.log(`Question: ${userQuestion[0]} ${userQuestion[1]} ${userQuestion[2]}`);
+    userAnswerAndCorrectAnswer.push(Number(readlineSync.question('You answer: ')));
     if (userAnswerAndCorrectAnswer[1] === userAnswerAndCorrectAnswer[0]) {
       console.log('Correct!');
     } else {
-      return noWinOfUser(
-        userAnswerAndCorrectAnswer[1],
-        userAnswerAndCorrectAnswer[0],
-        userName
-      );
+      return noWinOfUser(userAnswerAndCorrectAnswer[1], userAnswerAndCorrectAnswer[0], userName);
     }
   }
   return winOfUser(userName);
