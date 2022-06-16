@@ -36,7 +36,7 @@ const initialGreeting = () => {
 };
 
 const greetingWithName = (nameOfUser) => {
-  console.log(`Hello,  ${nameOfUser}!`);
+  console.log(`Hello, ${nameOfUser}!`);
 };
 
 const winOfUser = (nameOfUser) => {

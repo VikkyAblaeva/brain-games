@@ -1,6 +1,5 @@
 const random = (a) => {
-  const beginOfRandom = 2;
-  const number = Math.floor(Math.random() * a + beginOfRandom);
+  const number = Math.floor(Math.random() * a);
   return number;
 };
 export default random;
