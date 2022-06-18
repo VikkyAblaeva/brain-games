@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
-import random from '../random.js';
+import { getRandomNumber, isPrime } from '../utils.js';
 import {
-  isPrime,
   initialGreeting,
   greetingWithName,
   winOfUser,
@@ -17,7 +16,7 @@ const primeOrNot = () => {
   greetingWithName(userName);
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   for (let i = 0; i < 3; i += 1) {
-    const userNumber = random(rangeOfRandom) + exceptions;
+    const userNumber = getRandomNumber(rangeOfRandom) + exceptions;
     console.log(`Question: ${userNumber}`);
     userAnswer = readlineSync.question('Your answer: ');
     if ((isPrime(userNumber) === 'yes' && userAnswer === 'yes') || (isPrime(userNumber) === 'no' && userAnswer === 'no')) {

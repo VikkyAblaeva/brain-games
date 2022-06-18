@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import random from '../random.js';
+import { getRandomNumber } from '../utils.js';
 import {
   initialGreeting,
   greetingWithName,
@@ -21,9 +21,9 @@ const gameCalc = () => {
   for (let i = 0; i < 3; i += 1) {
     userAnswerAndCorrectAnswer = [];
     userQuestion = [
-      random(rangeOfRandomeNumber),
-      operands[random(rangeOfRandomeOperands)],
-      random(rangeOfRandomeNumber),
+      getRandomNumber(rangeOfRandomeNumber),
+      operands[getRandomNumber(rangeOfRandomeOperands)],
+      getRandomNumber(rangeOfRandomeNumber),
     ];
     if (userQuestion[1] === '+') {
       resultOfOperation = Number(userQuestion[0]) + Number(userQuestion[2]);

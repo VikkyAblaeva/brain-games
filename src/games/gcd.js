@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import random from '../random.js';
+import { getRandomNumber } from '../utils.js';
 import {
   initialGreeting,
   greetingWithName,
@@ -19,7 +19,10 @@ const gameGcd = () => {
   let userAnswer = 0;
   for (let j = 0; j < 3; j += 1) {
     divisibleNumbers = [];
-    divisibleNumbers = [random(rangeOfRandom) + 1, random(rangeOfRandom) + 1];
+    divisibleNumbers = [
+      getRandomNumber(rangeOfRandom) + 1,
+      getRandomNumber(rangeOfRandom) + 1,
+    ];
     min = Math.min.apply(null, divisibleNumbers);
     console.log(`Question: ${divisibleNumbers[0]} ${divisibleNumbers[1]}`);
     userAnswer = readlineSync.question('Your answer: ');

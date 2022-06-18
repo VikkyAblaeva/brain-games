@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import random from '../random.js';
+import { getRandomNumber } from '../utils.js';
 import {
   initialGreeting,
   greetingWithName,
@@ -16,7 +16,7 @@ const game = () => {
   let userQuestion = 0;
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   for (let i = 0; i < 3; i += 1) {
-    userQuestion = random(rangeOfRandom);
+    userQuestion = getRandomNumber(rangeOfRandom);
     userAnswerAndCorrectAnswer = [];
     if (userQuestion % 2 === 0) {
       userAnswerAndCorrectAnswer.push('yes');

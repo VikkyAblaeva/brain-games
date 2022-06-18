@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
-import random from '../random.js';
+import { getRandomNumber, generateProgression } from '../utils.js';
 import {
-  generateProgression,
   initialGreeting,
   greetingWithName,
   winOfUser,
@@ -21,7 +20,7 @@ const gameProgression = () => {
   const rangeOfRandom = 9;
   for (let i = 0; i < 3; i += 1) {
     progression = generateProgression();
-    secretElement = random(rangeOfRandom);
+    secretElement = getRandomNumber(rangeOfRandom);
     secretItem = progression[secretElement];
     progression[secretElement] = '..';
     strOfProgression = progression.join(' ');
