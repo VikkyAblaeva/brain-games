@@ -35,4 +35,19 @@ const generateProgression = () => {
   return array;
 };
 
-export { getRandomNumber, isPrime, generateProgression };
+const isEven = (number) => {
+  let result = '';
+  if (number % 2 === 0) {
+    result = 'yes';
+  } else {
+    result = 'no';
+  }
+  return result;
+};
+
+export {
+  getRandomNumber,
+  isPrime,
+  generateProgression,
+  isEven,
+};

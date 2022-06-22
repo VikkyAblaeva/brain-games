@@ -1,43 +1,33 @@
-import readlineSync from 'readline-sync';
 import { getRandomNumber } from '../utils.js';
-import {
-  initialGreeting,
-  greetingWithName,
-  winOfUser,
-  noWinOfUser,
-} from '../index.js';
+import { answerOfUser } from '../index.js';
 
-const gameGcd = () => {
-  initialGreeting();
-  const userName = readlineSync.question('May I have your name? ');
-  greetingWithName(userName);
-  console.log('Find the greatest common divisor of given numbers.');
-  let min = 0;
-  let maxGcd = 0;
-  const rangeOfRandom = 20;
-  let divisibleNumbers = [];
-  let userAnswer = 0;
-  for (let j = 0; j < 3; j += 1) {
-    divisibleNumbers = [];
-    divisibleNumbers = [
-      getRandomNumber(rangeOfRandom) + 1,
-      getRandomNumber(rangeOfRandom) + 1,
-    ];
-    min = Math.min.apply(null, divisibleNumbers);
-    console.log(`Question: ${divisibleNumbers[0]} ${divisibleNumbers[1]}`);
-    userAnswer = readlineSync.question('Your answer: ');
-    for (let i = 1; i <= min; i += 1) {
-      if (divisibleNumbers[0] % i === 0 && divisibleNumbers[1] % i === 0) {
-        maxGcd = i;
-      }
-    }
-    if (Number(userAnswer) === maxGcd) {
-      console.log('Correct!');
-    } else {
-      return noWinOfUser(userAnswer, maxGcd, userName);
+const gamePhrase = 'Find the greatest common divisor of given numbers.';
+let min = 0;
+let maxGcd = 0;
+const rangeOfRandom = 20;
+let divisibleNumbers = [];
+let userAnswer = 0;
+const beginRangeofRandom = 1;
+let userAnswerAndCorrectAnswer = [];
+
+const generateRound = () => {
+  userAnswerAndCorrectAnswer = [];
+  divisibleNumbers = [];
+  divisibleNumbers = [
+    getRandomNumber(rangeOfRandom) + beginRangeofRandom,
+    getRandomNumber(rangeOfRandom) + beginRangeofRandom,
+  ];
+  min = Math.min.apply(null, divisibleNumbers);
+  console.log(`Question: ${divisibleNumbers[0]} ${divisibleNumbers[1]}`);
+  userAnswer = answerOfUser();
+  for (let i = 1; i <= min; i += 1) {
+    if (divisibleNumbers[0] % i === 0 && divisibleNumbers[1] % i === 0) {
+      maxGcd = i;
     }
   }
-  return winOfUser(userName);
+  userAnswerAndCorrectAnswer.push(Number(maxGcd));
+  userAnswerAndCorrectAnswer.push(Number(userAnswer));
+  return userAnswerAndCorrectAnswer;
 };
 
-export default gameGcd;
+export { gamePhrase, generateRound };

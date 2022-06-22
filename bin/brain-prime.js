@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import primeOrNot from '../src/games/prime.js';
+import { generateRound, gamePhrase } from '../src/games/prime.js';
+import { gameLogic } from '../src/index.js';
 
-primeOrNot();
+gameLogic(gamePhrase, generateRound);

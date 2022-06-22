@@ -1,31 +1,20 @@
-import readlineSync from 'readline-sync';
 import { getRandomNumber, isPrime } from '../utils.js';
-import {
-  initialGreeting,
-  greetingWithName,
-  winOfUser,
-  noWinOfUser,
-} from '../index.js';
+import { answerOfUser } from '../index.js';
 
-const primeOrNot = () => {
-  let userAnswer;
-  initialGreeting();
-  const exceptions = 2;
-  const rangeOfRandom = 20;
-  const userName = readlineSync.question('May I have your name? ');
-  greetingWithName(userName);
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  for (let i = 0; i < 3; i += 1) {
-    const userNumber = getRandomNumber(rangeOfRandom) + exceptions;
-    console.log(`Question: ${userNumber}`);
-    userAnswer = readlineSync.question('Your answer: ');
-    if ((isPrime(userNumber) === 'yes' && userAnswer === 'yes') || (isPrime(userNumber) === 'no' && userAnswer === 'no')) {
-      console.log('Correct!');
-    } else {
-      return noWinOfUser(userAnswer, isPrime(userNumber), userName);
-    }
-  }
-  return winOfUser(userName);
+const gamePhrase = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+let userAnswer = '';
+const beginOfRandome = 2;
+const rangeOfRandom = 20;
+let userAnswerAndCorrectAnswer = [];
+
+const generateRound = () => {
+  userAnswerAndCorrectAnswer = [];
+  const userNumber = getRandomNumber(rangeOfRandom) + beginOfRandome;
+  userAnswerAndCorrectAnswer.push(isPrime(userNumber));
+  console.log(`Question: ${userNumber}`);
+  userAnswer = answerOfUser();
+  userAnswerAndCorrectAnswer.push(userAnswer);
+  return userAnswerAndCorrectAnswer;
 };
 
-export default primeOrNot;
+export { gamePhrase, generateRound };

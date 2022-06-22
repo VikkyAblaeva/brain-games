@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import game from '../src/games/even.js';
+import { generateRound, gamePhrase } from '../src/games/even.js';
+import { gameLogic } from '../src/index.js';
 
-game();
+gameLogic(gamePhrase, generateRound);
