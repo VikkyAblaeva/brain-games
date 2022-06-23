@@ -2,16 +2,14 @@ import { getRandomNumber } from '../utils.js';
 import { answerOfUser } from '../index.js';
 
 const gamePhrase = 'What is the result of the expression?';
-let userAnswerAndCorrectAnswer = [];
-let userQuestion = [];
 const rangeOfRandomeNumber = 20;
 const rangeOfRandomeOperands = 2;
 const operands = '+-*';
-let resultOfOperation = 0;
 
 const generateRound = () => {
-  userAnswerAndCorrectAnswer = [];
-  userQuestion = [
+  let resultOfOperation = 0;
+  const userAnswerAndCorrectAnswer = [];
+  const userQuestion = [
     getRandomNumber(rangeOfRandomeNumber),
     operands[getRandomNumber(rangeOfRandomeOperands)],
     getRandomNumber(rangeOfRandomeNumber),

@@ -7,10 +7,13 @@ const rangeOfRandom = 100;
 const generateRound = () => {
   const userQuestion = getRandomNumber(rangeOfRandom);
   console.log(`Question: ${userQuestion}`);
-  const evenOrNot = isEven(userQuestion);
-  const userAnswer = answerOfUser();
   const correctAnswerWithUserAnswer = [];
-  correctAnswerWithUserAnswer.push(evenOrNot);
+  if (isEven(userQuestion)) {
+    correctAnswerWithUserAnswer.push('yes');
+  } else {
+    correctAnswerWithUserAnswer.push('no');
+  }
+  const userAnswer = answerOfUser();
   correctAnswerWithUserAnswer.push(userAnswer);
   return correctAnswerWithUserAnswer;
 };

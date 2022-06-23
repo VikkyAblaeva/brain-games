@@ -5,18 +5,12 @@ const getRandomNumber = (rangeOfRandom) => {
 
 const isPrime = (number) => {
   let divisiors = 0;
-  let finishOfFunction;
   for (let i = 2; i <= number / 2; i += 1) {
     if (number % i === 0) {
       divisiors += 1;
     }
   }
-  if (divisiors === 0) {
-    finishOfFunction = 'yes';
-  } else {
-    finishOfFunction = 'no';
-  }
-  return finishOfFunction;
+  return divisiors === 0;
 };
 
 const generateProgression = () => {
@@ -35,15 +29,7 @@ const generateProgression = () => {
   return array;
 };
 
-const isEven = (number) => {
-  let result = '';
-  if (number % 2 === 0) {
-    result = 'yes';
-  } else {
-    result = 'no';
-  }
-  return result;
-};
+const isEven = (number) => number % 2 === 0;
 
 export {
   getRandomNumber,

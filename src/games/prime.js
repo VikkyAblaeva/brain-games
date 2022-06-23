@@ -2,17 +2,19 @@ import { getRandomNumber, isPrime } from '../utils.js';
 import { answerOfUser } from '../index.js';
 
 const gamePhrase = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-let userAnswer = '';
 const beginOfRandome = 2;
 const rangeOfRandom = 20;
-let userAnswerAndCorrectAnswer = [];
 
 const generateRound = () => {
-  userAnswerAndCorrectAnswer = [];
+  const userAnswerAndCorrectAnswer = [];
   const userNumber = getRandomNumber(rangeOfRandom) + beginOfRandome;
-  userAnswerAndCorrectAnswer.push(isPrime(userNumber));
+  if (isPrime(userNumber) === true) {
+    userAnswerAndCorrectAnswer.push('yes');
+  } else {
+    userAnswerAndCorrectAnswer.push('no');
+  }
   console.log(`Question: ${userNumber}`);
-  userAnswer = answerOfUser();
+  const userAnswer = answerOfUser();
   userAnswerAndCorrectAnswer.push(userAnswer);
   return userAnswerAndCorrectAnswer;
 };
