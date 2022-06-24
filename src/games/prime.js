@@ -1,5 +1,5 @@
 import { getRandomNumber, isPrime } from '../utils.js';
-import { answerOfUser } from '../index.js';
+import { getUserAnswer, generateGameLogic } from '../index.js';
 
 const gamePhrase = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const beginOfRandome = 2;
@@ -14,9 +14,11 @@ const generateRound = () => {
     userAnswerAndCorrectAnswer.push('no');
   }
   console.log(`Question: ${userNumber}`);
-  const userAnswer = answerOfUser();
+  const userAnswer = getUserAnswer();
   userAnswerAndCorrectAnswer.push(userAnswer);
   return userAnswerAndCorrectAnswer;
 };
 
-export { gamePhrase, generateRound };
+const generateFinalGame = () => generateGameLogic(gamePhrase, generateRound);
+
+export { gamePhrase, generateRound, generateFinalGame };

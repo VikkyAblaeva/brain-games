@@ -1,10 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const winOfUser = (nameOfUser) => {
-  console.log(`Congratulations, ${nameOfUser}!`);
-};
-
-const noWinOfUser = (userAnswer, correctAnswer, nameOfUser) => {
+const generateLosse = (userAnswer, correctAnswer, nameOfUser) => {
   console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
   console.log(`Let's try again, ${nameOfUser}!`);
 };
@@ -14,13 +10,13 @@ const getUserName = () => {
   return userName;
 };
 
-const answerOfUser = () => {
+const getUserAnswer = () => {
   const userAnswer = readlineSync.question('You answer: ');
   return userAnswer;
 };
 const roundCount = 3;
 
-const gameLogic = (gamePhrase, generateRound) => {
+const generateGameLogic = (gamePhrase, generateRound) => {
   console.log('Welcome to the Brain Games!');
   const nameOfUser = getUserName();
   console.log(`Hello, ${nameOfUser}!`);
@@ -32,18 +28,16 @@ const gameLogic = (gamePhrase, generateRound) => {
     if (correctAndUserAnswer[0] === correctAndUserAnswer[1]) {
       console.log('Correct!');
     } else {
-      return noWinOfUser(correctAndUserAnswer[1], correctAndUserAnswer[0], nameOfUser);
+      return generateLosse(correctAndUserAnswer[1], correctAndUserAnswer[0], nameOfUser);
     }
   }
-
-  return winOfUser(nameOfUser);
+  return console.log(`Congratulations, ${nameOfUser}!`);
 };
 
 export {
-  winOfUser,
-  noWinOfUser,
-  gameLogic,
+  generateLosse,
+  generateGameLogic,
   getUserName,
   roundCount,
-  answerOfUser,
+  getUserAnswer,
 };

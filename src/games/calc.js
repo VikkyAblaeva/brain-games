@@ -1,5 +1,5 @@
 import { getRandomNumber } from '../utils.js';
-import { answerOfUser } from '../index.js';
+import { getUserAnswer, generateGameLogic } from '../index.js';
 
 const gamePhrase = 'What is the result of the expression?';
 const rangeOfRandomeNumber = 20;
@@ -25,9 +25,11 @@ const generateRound = () => {
   }
   userAnswerAndCorrectAnswer.push(resultOfOperation);
   console.log(`Question: ${userQuestion[0]} ${userQuestion[1]} ${userQuestion[2]}`);
-  const userAnswer = answerOfUser();
+  const userAnswer = getUserAnswer();
   userAnswerAndCorrectAnswer.push(Number(userAnswer));
   return userAnswerAndCorrectAnswer;
 };
 
-export { gamePhrase, generateRound };
+const generateFinalGame = () => generateGameLogic(gamePhrase, generateRound);
+
+export { gamePhrase, generateRound, generateFinalGame };

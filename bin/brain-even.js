@@ -1,6 +1,4 @@
 #!/usr/bin/env node
+import { generateFinalGame } from '../src/games/even.js';
 
-import { generateRound, gamePhrase } from '../src/games/even.js';
-import { gameLogic } from '../src/index.js';
-
-gameLogic(gamePhrase, generateRound);
+generateFinalGame();

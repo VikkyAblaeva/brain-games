@@ -1,5 +1,5 @@
 import { getRandomNumber } from '../utils.js';
-import { answerOfUser } from '../index.js';
+import { getUserAnswer, generateGameLogic } from '../index.js';
 
 const gamePhrase = 'Find the greatest common divisor of given numbers.';
 const rangeOfRandom = 20;
@@ -15,7 +15,7 @@ const generateRound = () => {
   ];
   const min = Math.min.apply(null, divisibleNumbers);
   console.log(`Question: ${divisibleNumbers[0]} ${divisibleNumbers[1]}`);
-  const userAnswer = answerOfUser();
+  const userAnswer = getUserAnswer();
   for (let i = 1; i <= min; i += 1) {
     if (divisibleNumbers[0] % i === 0 && divisibleNumbers[1] % i === 0) {
       maxGcd = i;
@@ -26,4 +26,6 @@ const generateRound = () => {
   return userAnswerAndCorrectAnswer;
 };
 
-export { gamePhrase, generateRound };
+const generateFinalGame = () => generateGameLogic(gamePhrase, generateRound);
+
+export { gamePhrase, generateRound, generateFinalGame };
