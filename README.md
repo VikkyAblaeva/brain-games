@@ -21,6 +21,10 @@
     <li>Поддерживаемая версия Node.js - 17.9.0</li>
 </ul>
 
+<h3>Установка пакета:</h3>
+
+<a href="https://asciinema.org/a/9IUVcQBbhQWh1JHeh39266OXJ" target="_blank"><img src="https://asciinema.org/a/9IUVcQBbhQWh1JHeh39266OXJ.svg"></a>
+
 <h3>brain-games</h3>
 
 <a href="https://asciinema.org/a/CvQcQV2TvQmFz6Ua6z5n4t1fk" target="_blank"><img src="https://asciinema.org/a/CvQcQV2TvQmFz6Ua6z5n4t1fk.svg"></a>
@@ -44,7 +48,3 @@
 <h3>brain-prime</h3>
 
 <a href="https://asciinema.org/a/1KfGPREJEfuHHHKFrpKqkk5bK" target="_blank"><img src="https://asciinema.org/a/1KfGPREJEfuHHHKFrpKqkk5bK.svg"></a>
-
-<h3>Установка пакета:</h3>
-
-<a href="https://asciinema.org/a/2iCLcNf2ySyrCWtpnzsZFtpZg" target="_blank"><img src="https://asciinema.org/a/2iCLcNf2ySyrCWtpnzsZFtpZg.svg"></a>
