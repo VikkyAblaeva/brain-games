@@ -1,10 +1,5 @@
 import readlineSync from 'readline-sync';
 
-const generateLosse = (userAnswer, correctAnswer, nameOfUser) => {
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  console.log(`Let's try again, ${nameOfUser}!`);
-};
-
 const getUserName = () => {
   const userName = readlineSync.question('May I have your name? ');
   return userName;
@@ -22,20 +17,19 @@ const generateGameLogic = (gamePhrase, generateRound) => {
   console.log(`Hello, ${nameOfUser}!`);
   console.log(gamePhrase);
 
-  let correctAndUserAnswer = [];
   for (let i = 0; i < roundCount; i += 1) {
-    correctAndUserAnswer = generateRound();
-    if (correctAndUserAnswer[0] === correctAndUserAnswer[1]) {
+    const [question, answer] = generateRound();
+    if (question === answer) {
       console.log('Correct!');
     } else {
-      return generateLosse(correctAndUserAnswer[1], correctAndUserAnswer[0], nameOfUser);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${question}'.`);
+      return console.log(`Let's try again, ${nameOfUser}!`);
     }
   }
   return console.log(`Congratulations, ${nameOfUser}!`);
 };
 
 export {
-  generateLosse,
   generateGameLogic,
   getUserName,
   roundCount,

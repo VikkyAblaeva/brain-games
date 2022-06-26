@@ -15,18 +15,29 @@ const isPrime = (number) => {
 
 const generateProgression = () => {
   const beginOfRandome = 1;
-  const endOfArray = 9;
+  const endOfArrayProgression = 9;
   const stepProgression = 6;
   const randomeForNewItem = 10;
   let newitem = getRandomNumber(randomeForNewItem) + beginOfRandome;
   const step = getRandomNumber(stepProgression) + beginOfRandome;
-  const array = [];
-  array.push(newitem);
-  for (let i = 0; i < endOfArray; i += 1) {
+  const progression = [];
+  progression.push(newitem);
+  for (let i = 0; i < endOfArrayProgression; i += 1) {
     newitem += step;
-    array.push(newitem);
+    progression.push(newitem);
   }
-  return array;
+  return progression;
+};
+
+const findGcd = (numbers) => {
+  let maxGcd = 0;
+  const min = Math.min.apply(null, numbers);
+  for (let i = 1; i <= min; i += 1) {
+    if (numbers[0] % i === 0 && numbers[1] % i === 0) {
+      maxGcd = i;
+    }
+  }
+  return maxGcd;
 };
 
 const isEven = (number) => number % 2 === 0;
@@ -36,4 +47,5 @@ export {
   isPrime,
   generateProgression,
   isEven,
+  findGcd,
 };

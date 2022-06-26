@@ -8,11 +8,7 @@ const rangeOfRandom = 20;
 const generateRound = () => {
   const userAnswerAndCorrectAnswer = [];
   const userNumber = getRandomNumber(rangeOfRandom) + beginOfRandome;
-  if (isPrime(userNumber) === true) {
-    userAnswerAndCorrectAnswer.push('yes');
-  } else {
-    userAnswerAndCorrectAnswer.push('no');
-  }
+  userAnswerAndCorrectAnswer.push(isPrime(userNumber) ? 'yes' : 'no');
   console.log(`Question: ${userNumber}`);
   const userAnswer = getUserAnswer();
   userAnswerAndCorrectAnswer.push(userAnswer);
