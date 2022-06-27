@@ -24,7 +24,7 @@ const generateRound = () => {
       resultOfOperation = firstNumber * secondNumber;
       break;
     default:
-      throw new Error(`Unknown order state: '${operand}'!`);
+      throw new Error(`Unknown operand: '${operand}'!`);
   }
   userAnswerAndCorrectAnswer.push(resultOfOperation);
   console.log(`Question: ${firstNumber} ${operand} ${secondNumber}`);
