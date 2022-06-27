@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files.insertFinalNewline": true,
   "type": "module",
   "repository": {
     "url": "git+https://github.com/VikkyAblaeva/frontend-project-lvl1.git"
