@@ -6,11 +6,11 @@ const getUserAnswer = () => {
 };
 const roundCount = 3;
 
-const generateGameLogic = (gamePhrase, generateRound) => {
+const generateGameLogic = (gameRule, generateRound) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
-  console.log(gamePhrase);
+  console.log(gameRule);
 
   for (let i = 0; i < roundCount; i += 1) {
     const userQuestion = generateRound();

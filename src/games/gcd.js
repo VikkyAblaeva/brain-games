@@ -1,7 +1,7 @@
 import { getRandomNumber, findGcd } from '../utils.js';
 import { generateGameLogic } from '../index.js';
 
-const gamePhrase = 'Find the greatest common divisor of given numbers.';
+const gameRule = 'Find the greatest common divisor of given numbers.';
 const rangeOfRandom = 20;
 const beginRangeofRandom = 1;
 
@@ -15,6 +15,6 @@ const generateRound = () => {
   return rightAnswer;
 };
 
-const generateFinalGame = () => generateGameLogic(gamePhrase, generateRound);
+const generateFinalGame = () => generateGameLogic(gameRule, generateRound);
 
-export { gamePhrase, generateRound, generateFinalGame };
+export { gameRule, generateRound, generateFinalGame };
