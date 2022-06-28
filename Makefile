@@ -5,22 +5,22 @@ publish:
 	npm publish --dry-run
 
 brain-games:
-	node bin/brain-games.js 17.9.0
+	node bin/brain-games.js
 
 lint:
 	npx eslint .
 
 brain-even:
-	node bin/brain-even.js 17.9.0
+	node bin/brain-even.js
 
 brain-calc:
-	node bin/brain-calc.js 17.9.0
+	node bin/brain-calc.js
 
 brain-gcd:
-	node bin/brain-gcd.js 17.9.0
+	node bin/brain-gcd.js
 
 brain-prime:
-	node bin/brain-prime.js 17.9.0
+	node bin/brain-prime.js
 
 brain-progression:
-	node bin/brain-progression.js 17.9.0
+	node bin/brain-progression.js
