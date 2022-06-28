@@ -8,8 +8,8 @@ const beginRangeofRandom = 1;
 const generateRound = () => {
   const userAnswerAndCorrectAnswer = [];
   const divisibleNumbers = [
-    getRandomNumber(rangeOfRandom) + beginRangeofRandom,
-    getRandomNumber(rangeOfRandom) + beginRangeofRandom,
+    getRandomNumber(beginRangeofRandom, rangeOfRandom),
+    getRandomNumber(beginRangeofRandom, rangeOfRandom),
   ];
 
   console.log(`Question: ${divisibleNumbers[0]} ${divisibleNumbers[1]}`);

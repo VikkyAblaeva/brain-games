@@ -3,9 +3,10 @@ import { getUserAnswer, generateGameLogic } from '../index.js';
 
 const gamePhrase = 'Answer "yes" if the number is even, otherwise answer "no".';
 const rangeOfRandom = 100;
+const beginOfRandom = 0;
 
 const generateRound = () => {
-  const userQuestion = getRandomNumber(rangeOfRandom);
+  const userQuestion = getRandomNumber(beginOfRandom, rangeOfRandom);
   console.log(`Question: ${userQuestion}`);
   const correctAnswerWithUserAnswer = [];
   if (isEven(userQuestion)) {

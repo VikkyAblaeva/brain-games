@@ -1,5 +1,5 @@
-const getRandomNumber = (rangeOfRandom) => {
-  const number = Math.floor(Math.random() * rangeOfRandom);
+const getRandomNumber = (minOfRandom, maxOfRandom) => {
+  const number = Math.floor(Math.random() * maxOfRandom) + minOfRandom;
   return number;
 };
 
@@ -14,12 +14,12 @@ const isPrime = (number) => {
 };
 
 const generateProgression = () => {
-  const beginOfRandome = 1;
+  const beginOfRandom = 1;
   const endOfArrayProgression = 9;
   const stepProgression = 6;
-  const randomeForNewItem = 10;
-  let newitem = getRandomNumber(randomeForNewItem) + beginOfRandome;
-  const step = getRandomNumber(stepProgression) + beginOfRandome;
+  const randomForNewItem = 10;
+  let newitem = getRandomNumber(beginOfRandom, randomForNewItem);
+  const step = getRandomNumber(beginOfRandom, stepProgression);
   const progression = [];
   progression.push(newitem);
   for (let i = 0; i < endOfArrayProgression; i += 1) {
