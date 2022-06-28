@@ -1,3 +1,4 @@
+/* eslint-disable no-multiple-empty-lines */
 import readlineSync from 'readline-sync';
 
 const greeting = () => {
@@ -8,3 +9,4 @@ const greeting = () => {
 };
 
 export default greeting;
+
