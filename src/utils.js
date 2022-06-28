@@ -42,10 +42,29 @@ const findGcd = (numbers) => {
 
 const isEven = (number) => number % 2 === 0;
 
+const getCalculatorResult = (firstNumber, secondNumber, operand) => {
+  let resultOfOperation = 0;
+  switch (operand) {
+    case '+':
+      resultOfOperation = firstNumber + secondNumber;
+      break;
+    case '-':
+      resultOfOperation = firstNumber - secondNumber;
+      break;
+    case '*':
+      resultOfOperation = firstNumber * secondNumber;
+      break;
+    default:
+      throw new Error(`Unknown operand: '${operand}'!`);
+  }
+  return resultOfOperation;
+};
+
 export {
   getRandomNumber,
   isPrime,
   generateProgression,
   isEven,
   findGcd,
+  getCalculatorResult,
 };
