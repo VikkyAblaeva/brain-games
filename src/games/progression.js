@@ -34,4 +34,4 @@ const generateRound = () => {
 
 const startProgressionGame = () => generateGameLogic(gameDescription, generateRound);
 
-export { gameDescription, generateRound, startProgressionGame };
+export default startProgressionGame;

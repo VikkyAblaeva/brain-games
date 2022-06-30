@@ -16,4 +16,4 @@ const generateRound = () => {
 
 const startEvenGame = () => generateGameLogic(gameDescription, generateRound);
 
-export { gameDescription, generateRound, startEvenGame };
+export default startEvenGame;

@@ -31,4 +31,4 @@ const generateRound = () => {
 
 const startCalcGame = () => generateGameLogic(gameDescription, generateRound);
 
-export { gameDescription, generateRound, startCalcGame };
+export default startCalcGame;

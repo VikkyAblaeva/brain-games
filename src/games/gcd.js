@@ -28,4 +28,4 @@ const generateRound = () => {
 
 const startGcdGame = () => generateGameLogic(gameDescription, generateRound);
 
-export { gameDescription, generateRound, startGcdGame };
+export default startGcdGame;

@@ -24,4 +24,4 @@ const generateRound = () => {
 
 const startPrimeGame = () => generateGameLogic(gameDescription, generateRound);
 
-export { gameDescription, generateRound, startPrimeGame };
+export default startPrimeGame;
