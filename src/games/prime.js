@@ -1,7 +1,7 @@
 import { getRandomNumber, isPrime } from '../utils.js';
 import { generateGameLogic } from '../index.js';
 
-const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const beginOfRandom = 2;
 const rangeOfRandom = 20;
 
@@ -12,6 +12,6 @@ const generateRound = () => {
   return rightAnswer;
 };
 
-const generateFinalGame = () => generateGameLogic(gameRule, generateRound);
+const generateFinalGame = () => generateGameLogic(gameDescription, generateRound);
 
-export { gameRule, generateRound, generateFinalGame };
+export { gameDescription, generateRound, generateFinalGame };

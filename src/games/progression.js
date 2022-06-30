@@ -1,7 +1,7 @@
 import { getRandomNumber, generateProgression } from '../utils.js';
 import { generateGameLogic } from '../index.js';
 
-const gameRule = 'What number is missing in the progression?';
+const gameDescription = 'What number is missing in the progression?';
 const rangeOfRandom = 9;
 const beginOfRandom = 0;
 
@@ -16,6 +16,6 @@ const generateRound = () => {
   return rightAnswer;
 };
 
-const generateFinalGame = () => generateGameLogic(gameRule, generateRound);
+const generateFinalGame = () => generateGameLogic(gameDescription, generateRound);
 
-export { gameRule, generateRound, generateFinalGame };
+export { gameDescription, generateRound, generateFinalGame };

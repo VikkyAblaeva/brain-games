@@ -1,7 +1,7 @@
 import { getRandomNumber, getCalculatorResult } from '../utils.js';
 import { generateGameLogic } from '../index.js';
 
-const gameRule = 'What is the result of the expression?';
+const gameDescription = 'What is the result of the expression?';
 const rangeOfRandomNumber = 20;
 const beginOfRandom = 0;
 const operands = '+-*';
@@ -16,6 +16,6 @@ const generateRound = () => {
   return resultOfOperation;
 };
 
-const generateFinalGame = () => generateGameLogic(gameRule, generateRound);
+const generateFinalGame = () => generateGameLogic(gameDescription, generateRound);
 
-export { gameRule, generateRound, generateFinalGame };
+export { gameDescription, generateRound, generateFinalGame };
