@@ -16,6 +16,6 @@ const generateRound = () => {
   return resultOfOperation;
 };
 
-const generateFinalGame = () => generateGameLogic(gameDescription, generateRound);
+const startCalcGame = () => generateGameLogic(gameDescription, generateRound);
 
-export { gameDescription, generateRound, generateFinalGame };
+export { gameDescription, generateRound, startCalcGame };
