@@ -1,4 +1,4 @@
-import { getRandomNumber, getCalculatorResult } from '../utils.js';
+import { getRandomNumber } from '../utils.js';
 import { generateGameLogic } from '../index.js';
 
 const gameDescription = 'What is the result of the expression?';
@@ -6,6 +6,19 @@ const rangeOfRandomNumber = 20;
 const beginOfRandom = 0;
 const operands = '+-*';
 const rangeOfRandomOperands = 2;
+
+const getCalculatorResult = (firstNumber, secondNumber, operand) => {
+  switch (operand) {
+    case '+':
+      return firstNumber + secondNumber;
+    case '-':
+      return firstNumber - secondNumber;
+    case '*':
+      return firstNumber * secondNumber;
+    default:
+      throw new Error(`Unknown operand: '${operand}'!`);
+  }
+};
 
 const generateRound = () => {
   const operand = operands[getRandomNumber(beginOfRandom, rangeOfRandomOperands)];
