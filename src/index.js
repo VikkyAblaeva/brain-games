@@ -1,9 +1,5 @@
 import readlineSync from 'readline-sync';
 
-const getUserAnswer = () => {
-  const userAnswer = readlineSync.question('You answer: ');
-  return userAnswer;
-};
 const roundCount = 3;
 
 const generateGameLogic = (gameDescription, generateRound) => {
@@ -28,5 +24,4 @@ const generateGameLogic = (gameDescription, generateRound) => {
 export {
   generateGameLogic,
   roundCount,
-  getUserAnswer,
 };
