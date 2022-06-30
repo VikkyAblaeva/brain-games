@@ -2,8 +2,8 @@ import getRandomNumber from '../utils.js';
 import { generateGameLogic } from '../index.js';
 
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const beginOfRandom = 2;
-const rangeOfRandom = 20;
+const minOfRandom = 2;
+const maxOfRandom = 20;
 
 const isPrime = (number) => {
   let divisiors = 0;
@@ -16,7 +16,7 @@ const isPrime = (number) => {
 };
 
 const generateRound = () => {
-  const userNumber = getRandomNumber(beginOfRandom, rangeOfRandom);
+  const userNumber = getRandomNumber(minOfRandom, maxOfRandom);
   const rightAnswer = isPrime(userNumber) ? 'yes' : 'no';
   console.log(`Question: ${userNumber}`);
   return rightAnswer;

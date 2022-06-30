@@ -2,8 +2,8 @@ import getRandomNumber from '../utils.js';
 import { generateGameLogic } from '../index.js';
 
 const gameDescription = 'Find the greatest common divisor of given numbers.';
-const rangeOfRandom = 20;
-const beginRangeofRandom = 1;
+const maxOfRandom = 20;
+const minOfRandom = 1;
 
 const findGcd = (numbers) => {
   let maxGcd = 0;
@@ -18,8 +18,8 @@ const findGcd = (numbers) => {
 
 const generateRound = () => {
   const divisibleNumbers = [
-    getRandomNumber(beginRangeofRandom, rangeOfRandom),
-    getRandomNumber(beginRangeofRandom, rangeOfRandom),
+    getRandomNumber(minOfRandom, maxOfRandom),
+    getRandomNumber(minOfRandom, maxOfRandom),
   ];
   console.log(`Question: ${divisibleNumbers[0]} ${divisibleNumbers[1]}`);
   const rightAnswer = String(findGcd(divisibleNumbers));

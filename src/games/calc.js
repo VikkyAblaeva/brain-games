@@ -2,10 +2,10 @@ import getRandomNumber from '../utils.js';
 import { generateGameLogic } from '../index.js';
 
 const gameDescription = 'What is the result of the expression?';
-const rangeOfRandomNumber = 20;
-const beginOfRandom = 0;
-const operands = '+-*';
-const rangeOfRandomOperands = 2;
+const maxOfRandom = 20;
+const minOfRandom = 0;
+const operands = ['+', '-', '*'];
+const rangeOfRandomOperands = operands.length;
 
 const getCalculatorResult = (firstNumber, secondNumber, operand) => {
   switch (operand) {
@@ -21,9 +21,9 @@ const getCalculatorResult = (firstNumber, secondNumber, operand) => {
 };
 
 const generateRound = () => {
-  const operand = operands[getRandomNumber(beginOfRandom, rangeOfRandomOperands)];
-  const firstNumber = getRandomNumber(beginOfRandom, rangeOfRandomNumber);
-  const secondNumber = getRandomNumber(beginOfRandom, rangeOfRandomNumber);
+  const operand = operands[getRandomNumber(minOfRandom, rangeOfRandomOperands)];
+  const firstNumber = getRandomNumber(minOfRandom, maxOfRandom);
+  const secondNumber = getRandomNumber(minOfRandom, maxOfRandom);
   const resultOfOperation = String(getCalculatorResult(firstNumber, secondNumber, operand));
   console.log(`Question: ${firstNumber} ${operand} ${secondNumber}`);
   return resultOfOperation;

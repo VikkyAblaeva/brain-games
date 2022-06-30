@@ -4,15 +4,15 @@ import { generateGameLogic } from '../index.js';
 const gameDescription = 'What number is missing in the progression?';
 
 const generateProgression = () => {
-  const beginOfRandom = 1;
-  const endOfArrayProgression = 9;
+  const minOfRandom = 1;
+  const maxOfArrayProgression = 9;
   const stepProgression = 6;
   const randomForNewItem = 10;
-  let newitem = getRandomNumber(beginOfRandom, randomForNewItem);
-  const step = getRandomNumber(beginOfRandom, stepProgression);
+  let newitem = getRandomNumber(minOfRandom, randomForNewItem);
+  const step = getRandomNumber(minOfRandom, stepProgression);
   const progression = [];
   progression.push(newitem);
-  for (let i = 0; i < endOfArrayProgression; i += 1) {
+  for (let i = 0; i < maxOfArrayProgression; i += 1) {
     newitem += step;
     progression.push(newitem);
   }
@@ -20,10 +20,10 @@ const generateProgression = () => {
 };
 
 const generateRound = () => {
-  const rangeOfRandom = 9;
-  const beginOfRandom = 0;
+  const maxOfRandom = 9;
+  const minOfRandom = 0;
   const progression = generateProgression();
-  const secretElement = getRandomNumber(beginOfRandom, rangeOfRandom);
+  const secretElement = getRandomNumber(minOfRandom, maxOfRandom);
   const secretItem = progression[secretElement];
   progression[secretElement] = '..';
   const strOfProgression = progression.join(' ');
