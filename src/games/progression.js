@@ -6,10 +6,10 @@ const gameDescription = 'What number is missing in the progression?';
 const generateProgression = () => {
   const minOfRandom = 1;
   const maxOfArrayProgression = 9;
-  const stepProgression = 6;
-  const randomForNewItem = 10;
-  let newitem = getRandomNumber(minOfRandom, randomForNewItem);
-  const step = getRandomNumber(minOfRandom, stepProgression);
+  const maxStepProgression = 6;
+  const maxRandomForNewItem = 10;
+  let newitem = getRandomNumber(minOfRandom, maxRandomForNewItem);
+  const step = getRandomNumber(minOfRandom, maxStepProgression);
   const progression = [];
   progression.push(newitem);
   for (let i = 0; i < maxOfArrayProgression; i += 1) {
@@ -27,9 +27,10 @@ const generateRound = () => {
   const secretItem = progression[secretElement];
   progression[secretElement] = '..';
   const strOfProgression = progression.join(' ');
-  console.log(`Question: ${strOfProgression}`);
+  const question = `Question: ${strOfProgression}`;
   const rightAnswer = String(secretItem);
-  return rightAnswer;
+  const questionAnswer = [question, rightAnswer];
+  return questionAnswer;
 };
 
 const startProgressionGame = () => generateGameLogic(gameDescription, generateRound);

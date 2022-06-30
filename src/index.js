@@ -9,12 +9,13 @@ const generateGameLogic = (gameDescription, generateRound) => {
   console.log(gameDescription);
 
   for (let i = 0; i < roundCount; i += 1) {
-    const userQuestion = generateRound();
+    const [userQuestion, rightAnswer] = generateRound();
+    console.log(userQuestion);
     const userAnswer = readlineSync.question('You answer: ');
-    if (userQuestion === userAnswer) {
+    if (rightAnswer === userAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${userQuestion}'.`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
       return console.log(`Let's try again, ${userName}!`);
     }
   }

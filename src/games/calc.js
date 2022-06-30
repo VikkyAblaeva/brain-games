@@ -24,9 +24,10 @@ const generateRound = () => {
   const operand = operands[getRandomNumber(minOfRandom, rangeOfRandomOperands)];
   const firstNumber = getRandomNumber(minOfRandom, maxOfRandom);
   const secondNumber = getRandomNumber(minOfRandom, maxOfRandom);
-  const resultOfOperation = String(getCalculatorResult(firstNumber, secondNumber, operand));
-  console.log(`Question: ${firstNumber} ${operand} ${secondNumber}`);
-  return resultOfOperation;
+  const rightAnswer = String(getCalculatorResult(firstNumber, secondNumber, operand));
+  const question = `Question: ${firstNumber} ${operand} ${secondNumber}`;
+  const questionAnswer = [question, rightAnswer];
+  return questionAnswer;
 };
 
 const startCalcGame = () => generateGameLogic(gameDescription, generateRound);

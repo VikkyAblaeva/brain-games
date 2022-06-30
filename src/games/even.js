@@ -9,9 +9,10 @@ const isEven = (number) => number % 2 === 0;
 
 const generateRound = () => {
   const userQuestion = getRandomNumber(minOfRandom, maxOfRandom);
-  console.log(`Question: ${userQuestion}`);
+  const question = `Question: ${userQuestion}`;
   const rightAnswer = isEven(userQuestion) ? 'yes' : 'no';
-  return rightAnswer;
+  const questionAnswer = [question, rightAnswer];
+  return questionAnswer;
 };
 
 const startEvenGame = () => generateGameLogic(gameDescription, generateRound);

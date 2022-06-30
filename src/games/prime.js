@@ -18,8 +18,9 @@ const isPrime = (number) => {
 const generateRound = () => {
   const userNumber = getRandomNumber(minOfRandom, maxOfRandom);
   const rightAnswer = isPrime(userNumber) ? 'yes' : 'no';
-  console.log(`Question: ${userNumber}`);
-  return rightAnswer;
+  const question = `Question: ${userNumber}`;
+  const questionAnswer = [question, rightAnswer];
+  return questionAnswer;
 };
 
 const startPrimeGame = () => generateGameLogic(gameDescription, generateRound);

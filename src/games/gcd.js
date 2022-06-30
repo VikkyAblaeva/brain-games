@@ -21,9 +21,10 @@ const generateRound = () => {
     getRandomNumber(minOfRandom, maxOfRandom),
     getRandomNumber(minOfRandom, maxOfRandom),
   ];
-  console.log(`Question: ${divisibleNumbers[0]} ${divisibleNumbers[1]}`);
+  const question = `Question: ${divisibleNumbers[0]} ${divisibleNumbers[1]}`;
   const rightAnswer = String(findGcd(divisibleNumbers));
-  return rightAnswer;
+  const questionAnswer = [question, rightAnswer];
+  return questionAnswer;
 };
 
 const startGcdGame = () => generateGameLogic(gameDescription, generateRound);
