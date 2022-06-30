@@ -12,6 +12,6 @@ const generateRound = () => {
   return rightAnswer;
 };
 
-const generateFinalGame = () => generateGameLogic(gameDescription, generateRound);
+const startEvenGame = () => generateGameLogic(gameDescription, generateRound);
 
-export { gameDescription, generateRound, generateFinalGame };
+export { gameDescription, generateRound, startEvenGame };
