@@ -1,9 +1,9 @@
 import getRandomNumber from '../utils.js';
-import { generateGameLogic } from '../index.js';
+import { startGame } from '../index.js';
 
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const minOfRandom = 2;
-const maxOfRandom = 20;
+const minOfRandomNumber = 2;
+const maxOfRandomNumber = 20;
 
 const isPrime = (number) => {
   let divisiors = 0;
@@ -16,13 +16,13 @@ const isPrime = (number) => {
 };
 
 const generateRound = () => {
-  const userNumber = getRandomNumber(minOfRandom, maxOfRandom);
-  const rightAnswer = isPrime(userNumber) ? 'yes' : 'no';
-  const question = `Question: ${userNumber}`;
+  const randomNumber = getRandomNumber(minOfRandomNumber, maxOfRandomNumber);
+  const rightAnswer = isPrime(randomNumber) ? 'yes' : 'no';
+  const question = `Question: ${randomNumber}`;
   const questionAnswer = [question, rightAnswer];
   return questionAnswer;
 };
 
-const startPrimeGame = () => generateGameLogic(gameDescription, generateRound);
+const playPrimeGame = () => startGame(gameDescription, generateRound);
 
-export default startPrimeGame;
+export default playPrimeGame;
